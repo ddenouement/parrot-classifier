@@ -33,7 +33,7 @@ def model_predict(img_path):
     img = open_image(img_path)
     pred_class,pred_idx,outputs = learn.predict(img)
 	
-    return pred_class.split()[1]
+    return str(pred_class)
     
 
 
@@ -51,8 +51,7 @@ def upload():
         f = request.files['file']
  
         basepath = os.path.dirname(__file__)
-        file_path = os.path.join(
-            basepath, 'uploads', secure_filename(f.filename))
+        file_path = os.path.join( basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
  
         preds = model_predict(file_path)
