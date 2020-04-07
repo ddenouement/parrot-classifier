@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="row">
+  <div class="col-md-8"> 
+
+	<h2>Upload Your Image</h2>
+
+	<div>
+		<form id="upload-file" method="post" enctype="multipart/form-data">
+			<label for="imageUpload" class="upload-label">
+            Завантажте фото...
+			</label>
+			<input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+		</form>
+
+		<div class="image-section" style="display:none;">
+			<div class="img-preview">
+				<div id="imagePreview">
+				</div>
+			</div>
+			<div>
+				<button type="button" class="btn btn-primary btn-lg " id="btn-predict">Передбачити!</button>
+			</div>
+		</div>
+
+		<div class="loader" style="display:none;"></div>
+ 
+		<div class="well">
+		<h3 id="result">
+			<span> </span>
+		</h3>
+		</div>
+
+	</div>
+   </div>
+   <div class="col-md-4">
+		<h4 class="well">Нейронна мережа розпізнає 7 видів птахів:</h4>
+		<ul class="list-group">
+			 <li class="list-group-item"><a target="_blank" rel="noopener noreferrer" href="https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BF%D1%83%D0%B3%D0%B0_%D1%81%D1%96%D1%80%D0%B8%D0%B9">Жако</a></li>
+ 			 <li class="list-group-item"><a target="_blank" rel="noopener noreferrer" href="https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BF%D1%83%D0%B6%D0%BA%D0%B0_%D1%85%D0%B2%D0%B8%D0%BB%D1%8F%D1%81%D1%82%D0%B8%D0%B9">Хвилястий папужка</a></li>
+			 <li class="list-group-item"><a target="_blank" rel="noopener noreferrer" href="https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D0%B5%D0%BB%D0%B0">Корелла</a></li>
+			 <li class="list-group-item"><a target="_blank" rel="noopener noreferrer" href="https://uk.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D0%B0%D0%B4%D0%BE%D0%B2%D1%96">Какаду</a></li>
+			 <li class="list-group-item"><a target="_blank" rel="noopener noreferrer" href="https://uk.wikipedia.org/wiki/%D0%90%D1%80%D0%B0%D1%82%D0%B8%D0%BD%D0%B3%D0%B0">Сонячний папужка</a></li>
+			 <li class="list-group-item"><a target="_blank" rel="noopener noreferrer" href="https://uk.wikipedia.org/wiki/%D0%9D%D0%B5%D1%80%D0%BE%D0%B7%D0%BB%D1%83%D1%87%D0%BD%D0%B8%D0%BA">Нерозлучник</a></li>
+			 <li class="list-group-item"><a target="_blank" rel="noopener noreferrer" href="https://uk.wikipedia.org/wiki/%D0%90%D1%80%D0%B0_(%D1%80%D1%96%D0%B4)">Гіацинтовий Ара</a></li>
+		</ul>
+   </div>
+   
+</div>
+
+{% endblock %}
