@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 
 
+
  
 from fastai import *
 from fastai.vision import * 
@@ -20,10 +21,10 @@ app = Flask(__name__)
 
 
 path = Path("path")
-classes = ['africangrey','budgerigar','cockatiel', 'cockatoo', 'conure','lovebird','macaw']
+classes = ['africangrey','budgerigar','cockatiel', 'cockatoo', 'conure','lovebird','macaw','random']
 data2 = ImageDataBunch.single_from_classes(path, classes, ds_tfms=get_transforms(), size=224).normalize(imagenet_stats)
 learn = create_cnn(data2, models.resnet34)
-learn.load('stage-1')
+learn.load('stage-2')
 
 
 
@@ -32,6 +33,7 @@ def model_predict(img_path):
    
     img = open_image(img_path)
     pred_class,pred_idx,outputs = learn.predict(img)
+	
 	
     return str(pred_class)
     

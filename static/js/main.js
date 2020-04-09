@@ -54,6 +54,8 @@ $(document).ready(function () {
 					res = "Нерозлучник";
 				if(data == "macaw")
 					res = "Гіацинтовий Ара";
+				if(data == "random")
+					res = "зовсім не папуга";
                 $('.loader').hide();
                 $('#result').fadeIn(600);
                 $('#result').text(' Схоже, що це: ' + res);
