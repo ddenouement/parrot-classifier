@@ -54,11 +54,11 @@ $(document).ready(function () {
 					res = "Нерозлучник";
 				if(data == "macaw")
 					res = "Гіацинтовий Ара";
-				if(data == "random")
+				if(data == "random" || data =="")
 					res = "зовсім не папуга";
                 $('.loader').hide();
                 $('#result').fadeIn(600);
-				if(res=="") res  = "зовсім не папуга";
+				if(!res.length) res  = "зовсім не папуга";
                 $('#result').text(' Схоже, що це: ' + res);
                 console.log('Success!');
             },
