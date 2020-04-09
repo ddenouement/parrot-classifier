@@ -60,7 +60,7 @@ $(document).ready(function () {
                 $('#result').fadeIn(600);
 				if(!res.length) res  = "зовсім не папуга";
                 $('#result').text(' Схоже, що це: ' + res);
-                console.log('Success!');
+                console.log('Success!'+data+"___"+res);
             },
         });
     });
