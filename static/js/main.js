@@ -58,6 +58,7 @@ $(document).ready(function () {
 					res = "зовсім не папуга";
                 $('.loader').hide();
                 $('#result').fadeIn(600);
+				if(res=="") res  = "зовсім не папуга";
                 $('#result').text(' Схоже, що це: ' + res);
                 console.log('Success!');
             },
